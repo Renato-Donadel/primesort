@@ -1,17 +1,41 @@
-/* Contador de palavras
- *
- * Este programa recebera uma serie de caracteres representando palavras em sua
- * entrada. Ao receber um caractere fim de linha ('\n'), deve imprimir na tela o
- * numero de palavras separadas que recebeu e, apos, encerrar.
- */
-
 #include <stdio.h>
 
 int main() {
 
-  int x, y;
-
-  scanf("%d %d\n", &x, &y);
-  printf("%d\n", x + 200);
+  int v[20000], a[20000], j=0, i=0, n=0, h=0, m=0, aux=0;
+  
+  for(i=0; i<20000; i++){
+     scanf("%d", &v[i]);
+     j=j+1;
+     if(v[i]==-1) i=20001;
+  }
+  j=j-1;
+  for(i=0; i<=j; i++){
+     if(v[i]==1) h=h+1;
+  }
+  for(i=0; i<=j; i++){
+        if((v[i]%2==0 || v[i]%3==0 || v[i]%5==0 || v[i]%7==0 || v[i]%11==0 || v[i]%13==0 || v[i]%17==0 || v[i]%19==0 || v[i]%23==0 || v[i]%29==0 || v[i]%31==0 || v[i]%37==0 || v[i]%41==0 || v[i]%43==0 || v[i]%47==0 || v[i]%53==0 || v[i]%59==0 || v[i]%61==0 || v[i]%67==0 || v[i]%71==0 || v[i]%73==0 || v[i]%79==0 || v[i]%83==0 || v[i]%89==0 || v[i]%97==0 || v[i]%101==0 || v[i]%103==0 || v[i]%107==0 || v[i]%109==0 || v[i]%113==0 || v[i]%127==0 || v[i]%131==0 || v[i]%137==0 || v[i]%139==0) && v[i]!=2 && v[i]!=3 && v[i]!=5 && v[i]!=7 && v[i]!=11 && v[i]!=13 && v[i]!=17 && v[i]!=19 && v[i]!=23 && v[i]!=29 && v[i]!=31 && v[i]!=37 && v[i]!=41 && v[i]!=43 && v[i]!=47 && v[i]!=53 && v[i]!=59 && v[i]!=61 && v[i]!=67 && v[i]!=71 && v[i]!=73 && v[i]!=79 && v[i]!=83 && v[i]!=89 && v[i]!=97 && v[i]!=101 && v[i]!=103 && v[i]!=107 && v[i]!=109 && v[i]!=113 && v[i]!=127 && v[i]!=131 && v[i]!=137 && v[i]!=139){
+           n=n+1;
+           a[i]=v[i];
+        }
+        else a[i]=0;
+  }
+  for(i=0; i<j; i++){
+      for(m=0; m<=n; m++){
+          if(a[i]>a[m]){
+            aux=a[i];
+            a[i]=a[m];
+            a[m]=aux;
+          }
+      }
+  }
+  for(i=0; i<j; i++){
+     if(a[i]!=0)printf("%d\n", a[i]);
+  }
+  while(h!=0){
+       printf("1\n");   
+       h=h-1;
+  }
+   
   return 0;
 }
